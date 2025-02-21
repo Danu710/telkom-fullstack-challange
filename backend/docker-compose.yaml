@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # Service Express.js
+  app:
+    build: .
+    container_name: express_app
+    restart: always
+    env_file: .env
+    ports:
+      - '${PORT}:${PORT}'
+    depends_on:
+      - postgres
+    networks:
+      - app_network
+
+  # Service PostgreSQL
+  postgres:
+    image: postgres:15
+    container_name: postgres_oss
+    restart: always
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${PASSWORD}
+      POSTGRES_DB: ${DATABASE}
+    ports:
+      - '${PORT_DB}:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+networks:
+  app_network:
+
+volumes:
+  postgres_data:
