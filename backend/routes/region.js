@@ -66,10 +66,10 @@ const router = express.Router();
  *                   properties:
  *                     totalRecords:
  *                       type: integer
- *                       example: 100
+ *                       example: 97794
  *                     totalPages:
  *                       type: integer
- *                       example: 20
+ *                       example: 19559
  *                     currentPage:
  *                       type: integer
  *                       example: 1
@@ -81,9 +81,9 @@ const router = express.Router();
  *                   items:
  *                     type: object
  *                     properties:
- *                       id:
- *                         type: integer
- *                         example: 1
+ *                       region_id:
+ *                         type: string
+ *                         example: "5307082020"
  *                       propinsi:
  *                         type: string
  *                         example: "Jawa Barat"
@@ -99,6 +99,45 @@ const router = express.Router();
  *                       nama:
  *                         type: string
  *                         example: "Region A"
+ *             example:
+ *               success: true
+ *               message: "Data retrieved successfully"
+ *               pagination:
+ *                 totalRecords: 97794
+ *                 totalPages: 19559
+ *                 currentPage: 1
+ *                 limit: 5
+ *               data:
+ *                 - region_id: "5307082020"
+ *                   propinsi: "Jawa Barat"
+ *                   kab_kota: "Bandung"
+ *                   kecamatan: "Coblong"
+ *                   kelurahan: "Dago"
+ *                   nama: "Region A"
+ *                 - region_id: "5307082021"
+ *                   propinsi: "Jawa Tengah"
+ *                   kab_kota: "Semarang"
+ *                   kecamatan: "Tembalang"
+ *                   kelurahan: "Sendangmulyo"
+ *                   nama: "Region B"
+ *                 - region_id: "5307082022"
+ *                   propinsi: "Jawa Timur"
+ *                   kab_kota: "Surabaya"
+ *                   kecamatan: "Wonokromo"
+ *                   kelurahan: "Darmo"
+ *                   nama: "Region C"
+ *                 - region_id: "5307082023"
+ *                   propinsi: "DKI Jakarta"
+ *                   kab_kota: "Jakarta Selatan"
+ *                   kecamatan: "Kebayoran Baru"
+ *                   kelurahan: "Melawai"
+ *                   nama: "Region D"
+ *                 - region_id: "5307082024"
+ *                   propinsi: "Bali"
+ *                   kab_kota: "Denpasar"
+ *                   kecamatan: "Denpasar Selatan"
+ *                   kelurahan: "Sanur"
+ *                   nama: "Region E"
  *       500:
  *         description: Kesalahan server
  */
