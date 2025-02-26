@@ -186,7 +186,7 @@ const downloadCSV = async () => {
             <AgencyList :users="data?.data || []" />
           </v-list>
 
-          <v-sheet class="d-flex flex-row justify-between">
+          <v-sheet class="d-flex flex-row justify-between ga-3">
             <v-btn
               color="success"
               :disabled="pending || !data?.data?.length"
